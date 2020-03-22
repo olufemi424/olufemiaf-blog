@@ -19,6 +19,7 @@ module.exports = {
     "gatsby-plugin-use-dark-mode",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -27,10 +28,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "post",
+        path: `${__dirname}/src/content/posts`,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "content",
-        path: `${__dirname}/content`,
+        name: "resources",
+        path: `${__dirname}/src/content/resources`,
       },
     },
     "gatsby-transformer-sharp",

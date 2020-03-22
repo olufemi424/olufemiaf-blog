@@ -10,7 +10,9 @@ export const HeaderStyle = styled(animated.header)`
   left: 0;
   z-index: 20;
   background-color: var(--navbar);
-  box-shadow: 0 0.5rem 2rem var(--shadow-color);
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+    0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  //box-shadow: 0 0.5rem 2rem var(--shadow-color);
   transition: background 0.2s ease-out;
 `;
 
@@ -21,7 +23,7 @@ export const HeaderWrapperStyle = styled.div`
   justify-content: space-between;
   transition: all 0.2s ease-out;
   user-select: none;
-  height: 7rem;
+  height: 8rem;
 `;
 
 export const HeaderContainerStyle = styled.div`
@@ -48,7 +50,7 @@ export const StyledNavLink = styled(Link)`
   color: var(--text);
   cursor: pointer;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: color 0.2s ease-out;
 
   &:hover {

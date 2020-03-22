@@ -5,3 +5,9 @@ export const ContainerStyle = styled.div`
   margin: 0 auto;
   padding: 0px 4rem;
 `;
+
+export const H1 = styled.h1`
+  font-size: 3.2rem;
+  margin: 2.144rem 0;
+  font-weight: 600;
+`;

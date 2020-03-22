@@ -51,6 +51,33 @@ export default createGlobalStyle`
     background-color: var(--background);
   }
 
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'radnika', sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.77777777777777776777777777;
+    font-weight: 400;
+  }
+
+  p a:nth-child(4n+1) { --rotate: -2deg; }
+  p a:nth-child(4n+2) { --rotate: 1.64deg; }
+  p a:nth-child(4n+3) { --rotate: 0.6deg; }
+  p a:nth-child(4n+4) { --rotate: -0.75deg; }
+
+  :not(pre) > code {
+    background: #f6f6f6;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 0 3.5px;
+  }
+
+  code, kbd, samp {
+    font-family: 'Operator mono';
+    font-weight: 300;
+  }
+
   form,
   input,
   textarea,
