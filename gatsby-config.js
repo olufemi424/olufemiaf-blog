@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title:
-      "Hi, I’m Olufemi, a full-stack web developer. BTech, MS Applied Computer Science.",
+      "Hi, I’m Olufemi. Full-stack web developer. BTech & MS Applied Computer Science.",
     description:
-      "A full stack developer with an eye for creative design, UI/UX development, Extensive knowledge of web applications and software development and a strong desire to learn and explore. If you are trying to learn wed development from zero to HERO, I will be sharing all the tips and trick of web development, resources and road maps to follow to land you your first job in the industy.",
+      "I'm full stack developer with an eye for creative design, UI/UX development, Extensive knowledge of web applications and software development and a strong desire to learn and explore.",
+    descriptionSub:
+      "Allow me to help you learn web development from zero to HERO, I will be sharing all the tips and trick of web development, resources and road maps to follow to land you your first job in the industy.",
     author: "Olufemi Afolabi",
     siteUrl: "https://olufemiaf.com/blog",
     logo: "OlufemiAf",
@@ -41,6 +43,17 @@ module.exports = {
       options: {
         name: "resources",
         path: `${__dirname}/src/content/resources`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: [
+          {
+            family: "Nunito",
+            variants: ["200", "400", "400i", "600", "600i", "700"],
+          },
+        ],
       },
     },
     "gatsby-transformer-sharp",

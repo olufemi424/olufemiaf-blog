@@ -23,6 +23,7 @@ const Blog = props => {
       <p>{props.data.markdownRemark.frontmatter.author}</p>
       <p>{props.data.markdownRemark.frontmatter.date}</p>
       <div
+        style={{ fontSize: "2rem" }}
         dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
       ></div>
     </Layout>

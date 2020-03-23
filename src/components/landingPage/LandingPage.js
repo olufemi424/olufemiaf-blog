@@ -1,25 +1,22 @@
 import React from "react";
 import { Link } from "gatsby";
-import { graphql, useStaticQuery } from "gatsby";
 import { LandingPageContainer } from "./LandingPageStyles";
+import profileImage from "../../images/profileImage.jpg";
 
-const LandingPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          author
-        }
-      }
-    }
-  `);
+const LandingPage = ({ site }) => {
   return (
     <LandingPageContainer>
-      <h1>{data.site.siteMetadata.author} - blog</h1>
-      <h2>I'm Olufemi Afolabi, a full-stack developer.</h2>
-      <p>
-        Need a developer ? <Link to="/contact">Contact me.</Link>
-      </p>
+      <div className="landing-img">
+        <img src={profileImage} alt={site.siteMetadata.author} />
+      </div>
+      <h1 className="landing-title">{site.siteMetadata.title}</h1>
+      <div className="landing-text">
+        <p>{site.siteMetadata.description}</p>
+        <p>{site.siteMetadata.descriptionSub}</p>
+        <p>
+          Need a developer ? <Link to="/contact">Contact me.</Link>
+        </p>
+      </div>
     </LandingPageContainer>
   );
 };
