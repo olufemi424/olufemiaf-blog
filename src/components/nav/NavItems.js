@@ -8,7 +8,6 @@ const LINKS = [
   { name: "Blog", to: "/blog" },
   { name: "Resources", to: "/resources" },
   { name: "Features", to: "/features" },
-  { name: "Contact", to: "/contact" },
 ];
 
 const NavItems = () => {

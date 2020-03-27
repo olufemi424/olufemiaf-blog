@@ -5,7 +5,7 @@ import { PostListItemCard } from "./PostItemStyles";
 const PostList = ({ post }) => {
   return (
     <PostListItemCard>
-      <Link to={`/blog/${post.node.fields.slug}`}>
+      <Link to={`/blog/${post.node.fields.slug}/`}>
         <h1>{post.node.frontmatter.title}</h1>
         <div className="post-details-group">
           <p className="post-author">

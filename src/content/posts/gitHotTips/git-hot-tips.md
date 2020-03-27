@@ -9,6 +9,8 @@ date: 2016-03-10T09:10:14
 id: 3727
 ---
 
+![Image](./wes-git-tips.png)
+
 Don't you just love little tips that make you say "How did I not know that?!"?
 
 Small incremental improvements are the way that you inch towards mastery of a topic. Every day I learn little things about web development that as a whole make me much better at my job.

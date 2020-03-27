@@ -13,13 +13,14 @@ export const LandingPageContainer = styled.div`
   .landing-img {
     grid-area: image;
     margin-right: 3rem;
-    width: 250px; //some sort of hack
+    width: 350px;
     height: 350px;
 
     img {
+      border-radius: 50%;
       width: 100%;
       height: 100%;
-      border-radius: 20px;
+      // border-radius: 20px;
       border: 0.5rem solid var(--white);
     }
   }
