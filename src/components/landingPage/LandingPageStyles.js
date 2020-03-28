@@ -1,45 +1,55 @@
 import styled from "styled-components";
 
 export const LandingPageContainer = styled.div`
-  background-color: var(--background);
-  font-size: 2rem;
   margin-top: 10rem;
-  height: 100%;
-  with: 100%;
-  display: grid;
-  grid-template-columns: 0 min-content minmax(300px, 900px) 0;
-  grid-template-areas: ". image title ." ". image text .";
+  position: relative;
 
-  .landing-img {
-    grid-area: image;
-    margin-right: 3rem;
-    width: 350px;
-    height: 350px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1rem solid var(--white);
+  }
 
-    img {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      // border-radius: 20px;
-      border: 0.5rem solid var(--white);
+  .title-bg {
+    display: flex;
+    padding: 20px;
+    background-color: #ff7979;
+    border-radius: 20px;
+
+    .landing-title {
+      flex-basis: 70%;
+      grid-area: title;
+      font-size: 5rem;
+      line-height: 1.2;
+      font-weight: 600;
+      color: var(--white);
     }
   }
 
-  .landing-title {
-    grid-area: title;
-    font-size: 5rem;
-    line-height: 1.2;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 2rem;
+  .space {
+    flex-basis: 30%;
+    background-color: #ff7979;
+  }
+
+  .landing-text-container {
+    display: flex;
+    margin-top: 20px;
+    font-size: 2rem;
   }
 
   .landing-text {
-    grid-area: text;
-    font-size: 2rem;
+    flex-basis: 70%;
+    position: absolute;
+    left: 30%;
+  }
 
-    p {
-      margin-bottom: 2rem;
-    }
+  .landing-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 290px;
+    height: 400px;
+    margin: 20px 0 0 20px;
   }
 `;

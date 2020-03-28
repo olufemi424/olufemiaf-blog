@@ -14,4 +14,5 @@ export const AppMainStyle = styled.main`
   flex-direction: column;
   flex: 1;
   margin-top: 100px;
+  min-height: 650px;
 `;
