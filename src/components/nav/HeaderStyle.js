@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
 import { Link } from "gatsby";
 
-export const HeaderStyle = styled(animated.header)`
+export const HeaderStyle = styled.header`
   position: fixed;
   width: 100%;
   max-width: 100vw;

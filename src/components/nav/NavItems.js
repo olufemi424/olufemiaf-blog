@@ -4,7 +4,6 @@ import NavItem from "./NavItem";
 import { StyledNav } from "./HeaderStyle";
 
 const LINKS = [
-  { name: "Home", to: "/" },
   { name: "Blog", to: "/blog" },
   { name: "Resources", to: "/resources" },
   { name: "Features", to: "/features" },

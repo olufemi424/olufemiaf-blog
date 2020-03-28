@@ -1,6 +1,6 @@
 ---
 title: 🔥 ES6 implemented a number of upgrades to the Object Literal notation.
-slug: git-hot-tips
+slug: object-literal-upgrades
 author: Wes Bos
 image: ss-2016-03-10-at-9.09.24-AM.png
 category:

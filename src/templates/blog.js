@@ -1,36 +1,46 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../layouts/Layout";
 import MdStyle from "../styles/mdStyle";
 
-export const query = graphql`
+export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
+    site {
+      siteMetadata {
         title
         author
-        date(formatString: "MMMM DD, YYYY")
       }
-      html
+    }
+    mdx(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt
+      fileAbsolutePath
+      frontmatter {
+        title
+        slug
+        date(formatString: "MMMM DD, YYYY")
+        category
+      }
+      body
     }
   }
 `;
 
-const Blog = props => {
-  const { data, pageContext } = props;
-  console.log(pageContext);
+const Blog = ({ data, pageContext, scope }) => {
+  const { site, mdx: post } = data;
   return (
     <Layout>
-      <MdStyle />
+      {/* <MdStyle /> */}
       <article className="markdown-body">
         <header>
-          <h1>{data.markdownRemark.frontmatter.title}</h1>
-          <p>{data.markdownRemark.frontmatter.author}</p>
-          <p>{data.markdownRemark.frontmatter.date}</p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.author}</p>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section
           style={{ fontSize: "2rem" }}
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+          dangerouslySetInnerHTML={{ __html: post.body }}
         ></section>
       </article>
       <nav>
@@ -44,16 +54,22 @@ const Blog = props => {
           }}
         >
           <li>
-            {pageContext.previous && (
-              <Link to={`/blog/${pageContext.previous.fields.slug}`} rel="prev">
-                ← {pageContext.previous.frontmatter.title}
+            {pageContext.prev && (
+              <Link
+                to={`/blog/${pageContext.prev.node.fields.slug}`}
+                rel="prev"
+              >
+                ← {pageContext.prev.node.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {pageContext.next && (
-              <Link to={`/blog/${pageContext.next.fields.slug}`} rel="next">
-                {pageContext.next.frontmatter.title} →
+              <Link
+                to={`/blog/${pageContext.next.node.fields.slug}`}
+                rel="next"
+              >
+                {pageContext.next.node.frontmatter.title} →
               </Link>
             )}
           </li>

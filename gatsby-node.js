@@ -1,33 +1,40 @@
 const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
 
 module.exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNode, createNodeField } = actions;
+  const { createNodeField } = actions;
 
-  if (node.internal.type === "MarkdownRemark") {
-    const slug = path.basename(node.fileAbsolutePath, ".md");
+  if (node.internal.type === `Mdx`) {
     // This is where we add our own custom fields to each node
+    const slug = path.basename(node.fileAbsolutePath, ".md");
 
     createNodeField({
+      name: `slug`,
       node,
-      name: "slug",
-      value: slug,
+      value: node.frontmatter.slug ? `/${node.frontmatter.slug}/` : slug,
+    });
+
+    // Add it to a collection
+    createNodeField({
+      name: `collection`,
+      node,
+      value: getNode(node.parent).sourceInstanceName,
     });
   }
 };
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const blogTemplate = path.resolve("./src/templates/blog.js");
+  const blogPost = path.resolve("./src/templates/blog.js");
 
-  const res = await graphql(`
+  const { errors, data } = await graphql(`
     query {
-      allMarkdownRemark(
+      allMdx(
+        filter: { fields: { collection: { eq: "post" } } }
         sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
       ) {
         edges {
           node {
+            body
             fields {
               slug
             }
@@ -40,24 +47,27 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  if (res.errors) {
-    throw res.errors;
+  if (errors) {
+    throw new Error("There was an error in gatsby.js 1");
   }
 
   // Create blog posts pages.
-  const posts = res.data.allMarkdownRemark.edges;
+  const posts = data.allMdx.edges;
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+    const prev = posts[index - 1];
+    const next = posts[index + 1];
+
+    const slug = post.node.fields.slug;
+
     createPage({
-      component: blogTemplate,
-      path: `/blog/${post.node.fields.slug}`,
+      component: blogPost,
+      path: `blog${slug}`,
       // Data passed to context is available
       // in page queries as GraphQL variables.
       context: {
-        slug: post.node.fields.slug,
-        previous,
+        slug: slug,
+        prev,
         next,
       },
     });
