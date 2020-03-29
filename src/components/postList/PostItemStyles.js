@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const PostListItemCard = styled.div`
-  padding: 3rem 2.5rem;
   margin: 3rem 0;
-  border-left: 5px solid var(--primary);
+  max-width: 75rem;
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   background-color: var(--white);
   border-radius: 0 1rem 1rem 0;
-  box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
 }
 
   :hover{

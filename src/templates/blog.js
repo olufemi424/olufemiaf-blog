@@ -28,6 +28,7 @@ export const pageQuery = graphql`
 `;
 
 const Blog = ({ data, pageContext, scope }) => {
+  console.log(data);
   const { site, mdx: post } = data;
   return (
     <Layout>
