@@ -6,7 +6,7 @@ const PostList = ({ post }) => {
   return (
     <PostListItemCard>
       <Link to={`/blog/${post.node.fields.slug}/`}>
-        <h1>{post.node.frontmatter.title}</h1>
+        <h3>{post.node.frontmatter.title}</h3>
         <div className="post-details-group">
           <p className="post-author">
             <span role="img" aria-label="creator">

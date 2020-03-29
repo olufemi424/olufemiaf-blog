@@ -20,8 +20,8 @@ export const PostListItemCard = styled.div`
     color:var(--black);
   }
 
-  h1 {
-    font-size: 2.4rem;
+  h3 {
+    font-size: 3.4rem;
     margin-bottom: 2rem;
   }
 
