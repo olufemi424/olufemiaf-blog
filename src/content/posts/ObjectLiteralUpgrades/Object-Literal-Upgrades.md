@@ -1,5 +1,5 @@
 ---
-title: 🔥 ES6 implemented a number of upgrades to the Object Literal notation.
+title: 🔥 ES6 Object Literal notation.
 slug: git-hot-tips
 author: Wes Bos
 image: ss-2016-03-10-at-9.09.24-AM.png
