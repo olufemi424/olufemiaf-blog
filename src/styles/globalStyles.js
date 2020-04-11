@@ -5,6 +5,7 @@ export default createGlobalStyle`
     --primary: ${props => props.theme.colors.main};
     --primary-light: ${props => props.theme.colors.light};
     --primary-lighter: ${props => props.theme.colors.lighter};
+    --secondary: ${props => props.theme.colors.secondary};
     --navbar: rgba(255, 255, 255, 0.95);
     --text: ${props => props.theme.colors.lightTheme.text};
     --text-highlight: ${props => props.theme.colors.lightTheme.textHighlight};
@@ -54,7 +55,7 @@ export default createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: 'radnika', sans-serif;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 
   p {
