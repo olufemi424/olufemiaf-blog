@@ -33,18 +33,6 @@ export const LandingLayout = styled.div`
         //   border-radius: 1rem;
         border-radius: 50%;
       }
-
-      ::after {
-        content: "";
-        background: var(--primary);
-        height: 20rem;
-        width: 100%;
-        position: absolute;
-        bottom: 3.3rem;
-        left: 0;
-        border: 10px solid #fff;
-        z-index: -1;
-      }
     }
 
     &-title {
