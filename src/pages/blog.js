@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../layouts/Layout";
+import Head from "../components/head/Head";
 // import PostList from "../components/postList/PostListItem";
 import { H1 } from "../styles/CommonStyles";
 
@@ -10,6 +11,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
+      <Head title="Blog" />
       <H1>Blog Posts</H1>
       {data.allMarkdownRemark &&
         data.allMarkdownRemark.edges.map((post, i) => (
