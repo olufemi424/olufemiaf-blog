@@ -10,6 +10,8 @@ date: 2016-10-17T13:44:21
 id: 3847
 ---
 
+![Image](./template-strings.png)
+
 In JavaScript, when you want to put a variable inside of a string, it's a pain in the ass because you have to stop your string, concatenate on the variable, and then open your string again and keep going.
 
 ```js

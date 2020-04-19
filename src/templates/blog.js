@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../layouts/Layout";
 import MdStyle from "../styles/mdStyle";
+import Head from "../components/head/Head";
 
 export const query = graphql`
   query($slug: String!) {
@@ -21,6 +22,7 @@ const Blog = props => {
   console.log(pageContext);
   return (
     <Layout>
+      <Head title={data.markdownRemark.frontmatter.title} />
       <MdStyle />
       <article className="markdown-body">
         <header>
@@ -43,14 +45,28 @@ const Blog = props => {
             padding: 0,
           }}
         >
-          <li>
+          <li
+            style={{
+              padding: "10px",
+              fontSize: "20px",
+              border: "4px dotted skyblue",
+              marginBottom: "20px",
+            }}
+          >
             {pageContext.previous && (
               <Link to={`/blog/${pageContext.previous.fields.slug}`} rel="prev">
                 ← {pageContext.previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li
+            style={{
+              padding: "10px",
+              fontSize: "20px",
+              border: "4px dotted skyblue",
+              marginBottom: "20px",
+            }}
+          >
             {pageContext.next && (
               <Link to={`/blog/${pageContext.next.fields.slug}`} rel="next">
                 {pageContext.next.frontmatter.title} →
