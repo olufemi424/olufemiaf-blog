@@ -13,5 +13,5 @@ export const AppMainStyle = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-top: 100px;
+  margin: 10rem 4rem 4rem;
 `;
