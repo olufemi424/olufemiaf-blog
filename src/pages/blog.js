@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../layouts/Layout";
 import Head from "../components/head/Head";
@@ -12,7 +12,7 @@ const BlogPage = ({ data }) => {
   return (
     <Layout>
       <Head title="Blog" />
-      <H1>Blog Posts</H1>
+      <H1 style={{ textAlign: "center" }}>Blog Posts</H1>
       <BlogListLayoutStule>
         {data.allMarkdownRemark &&
           data.allMarkdownRemark.edges.map((post, i) => (
