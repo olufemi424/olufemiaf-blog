@@ -49,7 +49,6 @@ const Blog = props => {
             style={{
               padding: "10px",
               fontSize: "20px",
-              border: "4px dotted skyblue",
               marginBottom: "20px",
             }}
           >
@@ -63,7 +62,6 @@ const Blog = props => {
             style={{
               padding: "10px",
               fontSize: "20px",
-              border: "4px dotted skyblue",
               marginBottom: "20px",
             }}
           >
