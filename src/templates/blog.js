@@ -62,7 +62,7 @@ const Blog = props => {
             style={{
               padding: "10px",
               fontSize: "20px",
-              marginBottom: "20px",
+              marginBottom: "10px",
             }}
           >
             {pageContext.next && (
