@@ -46,6 +46,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+         
+          {
+            resolve: `gatsby-transformer-sharp`,
+            options: {
+              // The option defaults to true
+              checkSupportedExtensions: false,
+            },
+          },
           `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,

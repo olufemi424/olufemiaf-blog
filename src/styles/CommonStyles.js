@@ -6,7 +6,9 @@ export const ContainerStyle = styled.div`
 `;
 
 export const H1 = styled.h1`
-  font-size: 3.2rem;
+  font-size: 4.2rem;
+  text-align: left;
+  padding: 2rem 0;
   margin: 2.144rem 0;
   font-weight: 600;
 `;

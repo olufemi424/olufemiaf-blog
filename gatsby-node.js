@@ -6,12 +6,31 @@ module.exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === "MarkdownRemark") {
     const slug = path.basename(node.fileAbsolutePath, ".md");
+    const pa_th= `../../static${node.frontmatter.image}`;
+
+    const { frontmatter } = node
+    if (frontmatter) {
+      const { image } = frontmatter
+      if (image) {
+          frontmatter.image = path.relative(
+            path.dirname(node.fileAbsolutePath),
+            path.join(__dirname, '/static/', image)
+          )
+      }
+    }
+
     // This is where we add our own custom fields to each node
 
     createNodeField({
       node,
       name: "slug",
       value: slug,
+    });
+
+    createNodeField({
+      node,
+      name: "image",
+      value: pa_th,
     });
   }
 };
