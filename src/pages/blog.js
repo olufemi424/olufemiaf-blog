@@ -9,16 +9,17 @@ import { H1 } from "../styles/CommonStyles";
 const BlogPage = ({ data }) => {
   if (!data) return <p>Shooooot! No data found!</p>;
 
+  const postsList = data.allMarkdownRemark 
+    && data.allMarkdownRemark.edges.map((post, i) => 
+      ( <PostList key={i} post={post}></PostList> ));
+
   return (
     <Layout>
       <Head title="Blog" />
-      <H1 style={{ textAlign: "center" }}>Blog Posts</H1>
-      <BlogListLayoutStule>
-        {data.allMarkdownRemark &&
-          data.allMarkdownRemark.edges.map((post, i) => (
-            <PostList key={i} post={post}></PostList>
-          ))}
-      </BlogListLayoutStule>
+      <H1>Blog Posts</H1>
+      <BlogListLayoutStyle>
+        {postsList}
+      </BlogListLayoutStyle>
     </Layout>
   );
 };
@@ -28,7 +29,7 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 280)
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
           }
           fields {
             slug
+            image 
           }
         }
       }
@@ -43,10 +45,11 @@ export const pageQuery = graphql`
   }
 `;
 
-const BlogListLayoutStule = styled.div`
+
+const BlogListLayoutStyle = styled.div`
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   box-sizing: border-box;
 `;
 

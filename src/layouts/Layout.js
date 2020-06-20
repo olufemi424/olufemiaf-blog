@@ -10,8 +10,8 @@ import Footer from "../components/footer/Footer";
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <AppWrapperStyle>
-        <GlobalStyles />
         <Header />
         <AppMainStyle>
           <ContainerStyle>{children}</ContainerStyle>
