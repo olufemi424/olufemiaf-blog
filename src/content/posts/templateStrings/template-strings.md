@@ -2,7 +2,7 @@
 title: An Intro to Template Strings
 slug: javascript-template-strings
 author: Wes Bos
-image: template-strings.png
+image: /template-strings.png
 category:
   - ES6
   - JavaScript

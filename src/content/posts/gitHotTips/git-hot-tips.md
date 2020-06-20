@@ -2,7 +2,7 @@
 title: 🔥 Git Hot Tips
 slug: git-hot-tips
 author: Wes Bos
-image: ss-2016-03-10-at-9.09.24-AM.png
+image: /wes-git-tips.png
 category:
   - Workflow + Tooling
 date: 2016-03-10T09:10:14

@@ -1,53 +1,55 @@
 import styled from "styled-components";
 
 export const PostListItemCard = styled.div`
-  flex-basis: 50%;
-  max-width: 45%;
+   display: flex;
+   border-bottom: 1px solid #B8B8B8;
+   padding: 0 0 20px 0;
+   
+   &:not(last-child) {
+      margin-bottom: 32px;
+   }
 
-  :nth-of-type(3n) {
-    flex-basis: 100%;
-  }
+   a {
+      text-decoration: none;
+      color: #000;
+   }
 
-  padding: 3rem 2.5rem;
-  margin: auto;
-  margin-bottom: 3rem;
-  background-color: var(--white);
-  border-radius: 1rem;
-  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
-    0 3px 1px 0 rgba(20, 23, 28, 0.1);
-  transition: 300ms ease-in;
+  .post-list-item__image {
+     height: 200px;
+     display: flex;
+     margin-right: 32px;
 
-  :hover {
-    background-color: grey;
-    color: white;
-  }
+     img {
+      max-width:300px;
+      max-height:250px;
+      width: auto;
+      height: auto;
+      align-self: flex-start;
+     }
+   }
 
-  a {
-    text-decoration: none;
-    color: var(--black);
-  }
+   .post-list-item__info {
+      .title {
+         font-size: 32px;
+         font-weight: 600;
+         margin-bottom: 16px;
+      }
 
-  h1 {
-    font-size: 2.4rem;
-    margin-bottom: 2rem;
-  }
+      .description {
+         font-size: 18px;
+      }
 
-  .post-details-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
+      .post-info {
+         display: flex;
+         font-size: 16px;
+         color: darkblue;
+         margin-top: 16px;
+      }
 
-  .post-author {
-    font-size: 1.5rem;
-    margin-right: 2rem;
-  }
+      .post-info-name {
+         margin-right: 16px;
+      }
 
-  .post-date {
-    font-size: 1.4rem;
-  }
-
-  .post-excerpt {
-    font-size: 1.5rem;
-  }
+      
+   }
 `;
