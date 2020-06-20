@@ -9,8 +9,6 @@ const PostList = ({ post }) => {
 
   const { node:postData } = post;
 
-  console.log(postData)
-
   return (
     <PostListItemCard>
         <div className="post-list-item__image">
