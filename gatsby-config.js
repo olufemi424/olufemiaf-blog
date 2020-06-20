@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     header: "Olufemi Afolabi - Blog",
+    landingPageTitle: "Learn web development from beginner to job-ready",
+    landingPageDes: "welcome to no-bs approach to learning web development",
     title: `Hi, I’m Olufemi. Full-stack web developer. BTech & MS Applied Computer Science.`,
     description: `I'm full stack developer with an eye for creative design, UI/UX development, Extensive knowledge of web applications and software development and a strong desire to learn and explore.`,
     descriptionSub: `Allow me to help you learn web development from zero to HERO, I will be sharing all the tips and trick of web development, resources and road maps to follow to land you your first job in the industy.`,
