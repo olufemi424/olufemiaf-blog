@@ -50,7 +50,7 @@ export const StyledNavLink = styled(Link)`
   color: var(--text);
   cursor: pointer;
   padding: 1rem 2rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   transition: color 0.2s ease-out;
 
   &:hover {
