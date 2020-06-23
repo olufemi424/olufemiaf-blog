@@ -8,7 +8,7 @@ export const CountDown = () => {
    const launchDate = new Date("Oct 4, 2020 23:00:00").getTime();
 
    useEffect(() => {
-      const dateCountDown = function() {
+      const dateCountDown = () => {
          // get todays day and time in milisec
          const now = new Date().getTime();
          //distance from now to the time
@@ -30,13 +30,14 @@ export const CountDown = () => {
         
       };
       const intv1 = setInterval(dateCountDown, 1000);
-      return () => {
-         if (timer.distance < 0) {
-            //stop countdown
-            clearInterval(intv1);
-         }
+      if (timer.distance < 0) {
+         //stop countdown
+         clearInterval(intv1);
       }
-   }, [timer])
+
+      return () => clearInterval(intv1);
+
+   }, [launchDate, timer.distance])
   
    return (
       <CountDownStyles>
