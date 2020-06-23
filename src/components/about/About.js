@@ -1,5 +1,5 @@
 import React from "react";
-import { LandingLayout } from "./LandingLayout";
+import { LandingLayout } from "./AboutStyles";
 import profileImage from "../../images/profileImage.jpg";
 import reactImage from "../../images/logo-react.svg";
 import angularImage from "../../images/logo-angular.png";

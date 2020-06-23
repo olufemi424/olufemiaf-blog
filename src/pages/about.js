@@ -2,16 +2,16 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../layouts/Layout";
+import LandingPage from "../components/about/About";
 import Head from "../components/head/Head";
-import LandingPage from "../components/landing/LandingPage/LandingPage";
 
-const Index = ({ data }) => {
+const About = ({ data }) => {
   const { site } = data;
 
   return (
     <Layout>
       <Head title="Home" />
-      <LandingPage site={ site } />
+      <LandingPage site={site}></LandingPage>
     </Layout>
   );
 };
@@ -23,11 +23,9 @@ export const pageQuery = graphql`
         title
         description
         descriptionSub
-        landingPageTitle
-        landingPageDes
       }
     }
   }
 `;
 
-export default Index;
+export default About;

@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../layouts/Layout";
 import Head from "../components/head/Head";
-import PostList from "../components/postList/PostListItem";
+import PostList from "../components/posts/PostListItem";
 import { H1 } from "../styles/CommonStyles";
 
 const BlogPage = ({ data }) => {

@@ -19,7 +19,6 @@ export const query = graphql`
 
 const Blog = props => {
   const { data, pageContext } = props;
-  console.log(pageContext);
   return (
     <Layout>
       <Head title={data.markdownRemark.frontmatter.title} />

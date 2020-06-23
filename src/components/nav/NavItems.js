@@ -7,7 +7,8 @@ const LINKS = [
   { name: "Home", to: "/" },
   { name: "Blog", to: "/blog" },
   { name: "Resources", to: "/resources" },
-  { name: "Features", to: "/features" },
+  { name: "About", to: "/about" },
+  { name: "Features", to: "/features" }, //TODO change this to road map (web development)
 ];
 
 const NavItems = () => {
