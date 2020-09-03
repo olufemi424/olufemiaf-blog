@@ -31,3 +31,5 @@ export const pageQuery = graphql`
 `;
 
 export default Index;
+
+//  Need to draw out whats next and moving forward with this application, remove this comment when you make significant progress. 
