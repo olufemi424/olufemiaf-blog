@@ -16,6 +16,7 @@ const Index = ({ data }) => {
   );
 };
 
+
 export const pageQuery = graphql`
   query {
     site {
